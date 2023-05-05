@@ -1,6 +1,6 @@
 ext.versions = [
         // Project
-        minSdk                          : 26,
+        minSdk                          : 24,
         compileSdk                      : 33,
 
         publishVersion_core             : '12.1.0',
