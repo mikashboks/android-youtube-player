@@ -44,10 +44,6 @@ android {
 }
 
 dependencies {
-  testImplementation "junit:junit:$versions.junit"
-  androidTestImplementation "androidx.test:runner:$versions.runner"
-  androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
-
   implementation project(':core')
   implementation project(':custom-ui')
   implementation project(':chromecast-sender')
