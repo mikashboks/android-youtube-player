@@ -42,7 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:tint="@android:color/black"
-            android:src="@drawable/ayp_ic_play_36dp" />
+            android:src="@drawable/mkb_ic_play_36dp" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -120,7 +120,7 @@
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:tint="@android:color/black"
-                android:src="@drawable/ayp_ic_youtube_24dp" />
+                android:src="@drawable/mkb_ic_youtube_24dp" />
 
             <TextView
                 android:id="@+id/total_time_text_view"

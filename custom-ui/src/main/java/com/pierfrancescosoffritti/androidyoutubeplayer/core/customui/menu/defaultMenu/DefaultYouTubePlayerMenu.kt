@@ -53,7 +53,7 @@ internal class DefaultYouTubePlayerMenu(private val context: Context) : YouTubeP
 
   private fun createPopupWindow(): PopupWindow {
     val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-    val view = inflater.inflate(R.layout.ayp_player_menu, null)
+    val view = inflater.inflate(R.layout.mkb_player_menu, null)
 
     val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
     recyclerView.layoutManager = LinearLayoutManager(context)
