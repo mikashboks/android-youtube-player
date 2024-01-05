@@ -1,1 +1,9 @@
 include ':core', ':core-sample-app', ':chromecast-sender', ':chromecast-sender-sample-app', ':custom-ui'
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+}
