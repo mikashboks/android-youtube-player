@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -62,6 +63,7 @@ class DefaultPlayerUiController(
   private var isPlayPauseButtonEnabled = true
   private var isCustomActionLeftEnabled = false
   private var isCustomActionRightEnabled = false
+  private var showProgress = false
 
   private var isMatchParent = false
 
@@ -71,7 +73,7 @@ class DefaultPlayerUiController(
 
       if (state === PlayerConstants.PlayerState.PLAYING || state === PlayerConstants.PlayerState.PAUSED || state === PlayerConstants.PlayerState.VIDEO_CUED) {
         panel.setBackgroundColor(ContextCompat.getColor(panel.context, android.R.color.transparent))
-        progressBar.visibility = View.GONE
+        progressBar.isVisible = false
 
         if (isPlayPauseButtonEnabled) playPauseButton.visibility = View.VISIBLE
         if (isCustomActionLeftEnabled) customActionLeft.visibility = View.VISIBLE
@@ -83,7 +85,7 @@ class DefaultPlayerUiController(
         updatePlayPauseButtonIcon(false)
 
         if (state === PlayerConstants.PlayerState.BUFFERING) {
-          progressBar.visibility = View.VISIBLE
+          progressBar.isVisible = showProgress
           panel.setBackgroundColor(
             ContextCompat.getColor(
               panel.context,
@@ -97,7 +99,7 @@ class DefaultPlayerUiController(
         }
 
         if (state === PlayerConstants.PlayerState.UNSTARTED) {
-          progressBar.visibility = View.GONE
+          progressBar.isVisible = false
           if (isPlayPauseButtonEnabled) playPauseButton.visibility = View.VISIBLE
         }
       }
@@ -234,6 +236,11 @@ class DefaultPlayerUiController(
 
   override fun showBufferingProgress(show: Boolean): PlayerUiController {
     youtubePlayerSeekBar.showBufferingProgress = show
+    return this
+  }
+
+  override fun enableProgress(show: Boolean): PlayerUiController {
+    this.showProgress = show
     return this
   }
 

@@ -40,6 +40,7 @@ interface PlayerUiController {
   fun showBufferingProgress(show: Boolean): PlayerUiController
 
   fun showYouTubeButton(show: Boolean): PlayerUiController
+  fun enableProgress(show: Boolean): PlayerUiController
 
   /**
    * Adds a View to the top of the player
